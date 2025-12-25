@@ -42,5 +42,5 @@ temp/
 Thumbs.db
 
 # Cache
-/coursera_cache/
+/coursera_cache
 courses.json
