@@ -3,7 +3,7 @@
 
 name: Starter Go Pipeline
 
-run-name: Pipeline run by @${{ github.actor }}
+run-name: Pipeline run by @${{ github.actor }}  
 
 on:
   push:
@@ -25,3 +25,6 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: Echoing test url
+      run: echo $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
