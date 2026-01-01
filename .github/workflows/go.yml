@@ -33,4 +33,4 @@ jobs:
 
     - name: Check OS
       if: runner.os != 'Windows'
-      run: echo "${{ github.event_name }}. The runner's operating system is $RUNNER_OS."
+      run: echo "${{ env.GREETING_MESSAGE }}. The runner's operating system is $RUNNER_OS."
