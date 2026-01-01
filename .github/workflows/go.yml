@@ -13,8 +13,10 @@ on:
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
+    env:
+      GREETING_MESSAGE: ${{ vars.GREETING_MESSAGE || 'Hello, World!' }}
     steps:
     - uses: actions/checkout@v4
 
@@ -28,3 +30,7 @@ jobs:
 
     - name: Echoing test url
       run: echo $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+
+    - name: Check OS
+      if: runner.os != 'Windows'
+      run: echo "${{ github.event_name }}. The runner's operating system is $RUNNER_OS."
